@@ -1,3 +1,4 @@
+#2025-4-15 Ubuntu 20.04镜像停止维护，针对升级ubuntu-22.04的修改
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同；编译纯净固件
 name: Build-Padavan-K2P-5.0-sxb
 
@@ -17,9 +18,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
-        cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
+        cpio git gettext automake autopoint texinfo build-essential help2man \
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
         sudo apt-get -y install kmod python3-docutils ibc-dev-bin
+        #sudo apt-get -y python-docutils  #针对ubuntu-20.04使用
     - name: Clone source code
       env:
         KERNEL: 3.4
