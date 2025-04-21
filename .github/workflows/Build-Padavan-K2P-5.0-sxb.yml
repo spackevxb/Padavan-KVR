@@ -1,4 +1,4 @@
-#2025-4-15 Ubuntu 20.04镜像停止维护，针对升级ubuntu-22.04的修改
+#2025-4-15 Ubuntu 20.04镜像停止维护，针对升级ubuntu-24.04(ubuntu-latest, ubuntu-24.04,ubuntu-22.04)的修改
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同；编译纯净固件
 name: Build-Padavan-K2P-5.0-sxb
 
@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.10
+    runs-on: ubuntu-24.04
+    #runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
